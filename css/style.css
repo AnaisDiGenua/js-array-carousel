@@ -1,5 +1,62 @@
+/* commons */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slider-thumbnails-container {
+    width: 70%;
+    display: flex;
+}
+
+
+
+
+/* slider */
+.slider {
+    width: 80%;
+}
+
+
+
+
+/* thumbnails */
+.thumbnails {
+    width: 20%;
+    position: relative;
+}
+.thumbnails .previous-pic, .thumbnails .next-pic {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); 
+}
+.previous-pic {
+    top: 10px;
+}
+.next-pic {
+    bottom: 10px;
+}
+
+
+
+
+
+/* debug  */
+.debug .slider-thumbnails-container {
+    height: 60%;
+    background-color: lightblue;
+}
+.debug .slider {
+    height: 100%;
+    background-color: lightcoral;
+}
+.debug .thumbnails {
+    height: 100%;
+    background-color: lightgoldenrodyellow;
 }
