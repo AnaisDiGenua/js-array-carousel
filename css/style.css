@@ -12,7 +12,13 @@
 }
 .slider-thumbnails-container {
     width: 70%;
+    height: 60%;
     display: flex;
+}
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 
@@ -21,7 +27,15 @@
 /* slider */
 .slider {
     width: 80%;
+    height: 100%;
 }
+.item {
+    height: 100%;
+}
+.items-container {
+    height: 100%;
+}
+
 
 
 
@@ -29,12 +43,19 @@
 /* thumbnails */
 .thumbnails {
     width: 20%;
+    height: 100%;
     position: relative;
 }
 .thumbnails .previous-pic, .thumbnails .next-pic {
     position: absolute;
     left: 50%;
     transform: translateX(-50%); 
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #cccccc;
+    border-radius: 50%;
 }
 .previous-pic {
     top: 10px;
@@ -42,21 +63,29 @@
 .next-pic {
     bottom: 10px;
 }
+.card-container {
+    height: 100%;
+}
+.card {
+    height: 20%;
+}
+
 
 
 
 
 
 /* debug  */
-.debug .slider-thumbnails-container {
-    height: 60%;
-    background-color: lightblue;
+/* .debug .slider-thumbnails-container {
+    background-color: lightblue; 
 }
 .debug .slider {
-    height: 100%;
-    background-color: lightcoral;
+    background-color: lightcoral; 
 }
 .debug .thumbnails {
-    height: 100%;
-    background-color: lightgoldenrodyellow;
+    background-color: lightgoldenrodyellow; 
 }
+.debug .card {
+    background-color: lightseagreen;
+    border: 2px solid red; 
+} */
