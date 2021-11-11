@@ -29,14 +29,16 @@ img {
     width: 80%;
     height: 100%;
 }
-.item {
-    height: 100%;
-}
 .items-container {
     height: 100%;
 }
-
-
+.item {
+    height: 100%;
+    display: none;
+}
+.active {
+    display: block;
+}
 
 
 

@@ -13,3 +13,59 @@
 // costruiamo del carosello una versione statica contenente un'immagine grande con del testo ben posizionato e una miniatura. Di questa versione statica al momento opportuno commenteremo (oscureremo) alcuni elementi per poterli riprodurre dinamicamente in js. Potremo quindi usarli come "template".
 // scriviamo sempre prima per punti il nostro algoritmo in italiano per capire cosa vogliamo fare
 // Al momento giusto (ihihhi starà a voi capire quale) rispondete a questa domanda: "Quanti cicli servono?"
+
+
+
+
+// creo l'array delle immagini
+const items = [
+    'img/01.jpg',
+    'img/02.jpg',
+    'img/03.jpg',
+    'img/04.jpg',
+    'img/05.jpg'
+];
+
+const itemsAlt = [
+    'foto Svezia',
+    'foto Svizzera',
+    'foto Gran Bretagna',
+    'foto Germania',
+    'foto Paradise'
+];
+
+
+let itemContent = '';
+let cardContent = '';
+
+
+
+
+// inserisco dinamicamente lo slider
+for (let i = 0; i < items.length; i++) {
+    itemContent += `
+    <div class="item">
+    <img src="${items[i]}" alt="${itemsAlt[i]}">
+    `;
+
+    cardContent += `
+    <div class="card">
+    <img src="${items[i]}" alt="${itemsAlt[i]}">
+    </div>
+    `;
+}
+
+
+
+// inserisco dentro i contenitori il contenuto
+const itemsContainer = document.querySelector('.items-container');
+itemsContainer.innerHTML = itemContent;
+const cardContainer = document.querySelector('.card-container');
+cardContainer.innerHTML = cardContent;
+
+
+
+
+// seleziono il primo elemento e aggiungo la classe active
+const item = document.querySelector('.item');
+item.className = 'item active';
