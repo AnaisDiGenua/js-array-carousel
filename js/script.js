@@ -17,7 +17,7 @@
 
 
 
-// creo l'array delle immagini
+// array delle immagini
 const items = [
     'img/01.jpg',
     'img/02.jpg',
@@ -25,7 +25,7 @@ const items = [
     'img/04.jpg',
     'img/05.jpg'
 ];
-
+// array alt
 const itemsAlt = [
     'foto Svezia',
     'foto Svizzera',
@@ -33,12 +33,28 @@ const itemsAlt = [
     'foto Germania',
     'foto Paradise'
 ];
+// array titoli
+const title = [
+    'Svezia',
+    'Svizzera',
+    'Gran Bretagna',
+    'Germania',
+    'Paradise'
+];
+// array testi
+const text = [
+    'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
+    'Lorem ipsum',
+    'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+    'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
+    'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
+];
+
+
 
 
 let itemContent = '';
 let cardContent = '';
-
-
 
 
 // inserisco dinamicamente lo slider
@@ -46,6 +62,10 @@ for (let i = 0; i < items.length; i++) {
     itemContent += `
     <div class="item">
     <img src="${items[i]}" alt="${itemsAlt[i]}">
+    <div class="title-text-box">
+    <h1>${title[i]}</h1>
+    <p>${text[i]}</p>
+    </div>
     `;
 
     cardContent += `
