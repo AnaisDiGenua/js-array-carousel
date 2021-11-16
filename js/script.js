@@ -53,39 +53,104 @@ const text = [
 
 
 
-let itemContent = '';
-let cardContent = '';
+// creo una variabile vuota dove metterci il contenuto
+let itemContent = ' ';
+let cardContent = ' ';
 
 
 // inserisco dinamicamente lo slider
 for (let i = 0; i < items.length; i++) {
-    itemContent += `
+
+    itemContent += 
+    `
     <div class="item">
-    <img src="${items[i]}" alt="${itemsAlt[i]}">
+    <img src="${items[i]}" alt="${title[i]}">
     <div class="title-text-box">
     <h1>${title[i]}</h1>
     <p>${text[i]}</p>
     </div>
-    `;
-
-    cardContent += `
-    <div class="card">
-    <img src="${items[i]}" alt="${itemsAlt[i]}">
     </div>
     `;
+
+    cardContent += 
+    `
+    <div class="card">
+    <img src="${items[i]}" alt="${title[i]}">
+    </div>
+    `
 }
 
 
 
-// inserisco dentro i contenitori il contenuto
-const itemsContainer = document.querySelector('.items-container');
-itemsContainer.innerHTML = itemContent;
+// inserisco il contenuto nell'html
+const itemContainer = document.querySelector('.items-container');
+itemContainer.innerHTML = itemContent;
 const cardContainer = document.querySelector('.card-container');
 cardContainer.innerHTML = cardContent;
 
 
 
+// seleziono tutti gli item per rendere il primo attivo
+const item = document.getElementsByClassName('item');
+const card = document.getElementsByClassName('card');
 
-// seleziono il primo elemento e aggiungo la classe active
-const item = document.querySelector('.item');
-item.className = 'item active';
+// creo la variabile che indica la partenza dell'indice 
+let activeItem = 0;
+
+// aggiungo all'item la classe active partendo da indice 0
+item[activeItem].classList.add('active');
+card[activeItem].classList.add('active-thumbnails');
+
+
+
+// attivo i pulsanti per scorrere le immagini
+const next = document.querySelector('.next-pic');
+const prev = document.querySelector('.previous-pic');
+
+
+
+// scateno l'evento al click di next
+next.addEventListener("click", function() {
+
+    // rimuovo la classe active all'elemento
+    item[activeItem].classList.remove('active');
+    card[activeItem].classList.remove('active-thumbnails');
+
+    // incremento il contatore
+    if (activeItem === items.length -1) {
+        activeItem = 0;
+    } else {
+        activeItem++;
+    }
+
+    // do l'active all'elemento successivo
+    item[activeItem].classList.add('active');
+    card[activeItem].classList.add('active-thumbnails');
+})
+
+
+
+// scateno l'evento al click di previous
+prev.addEventListener("click", function() {
+
+    // rimuovo la classe active all'elemento
+    item[activeItem].classList.remove('active');
+    card[activeItem].classList.remove('active-thumbnails');
+
+    // incremento il contatore
+    if (activeItem === 0) {
+        activeItem = items.length -1;
+    } else {
+        activeItem--;
+    }
+
+    // do l'active all'elemento successivo
+    item[activeItem].classList.add('active');
+    card[activeItem].classList.add('active-thumbnails');
+})
+
+
+
+
+
+
